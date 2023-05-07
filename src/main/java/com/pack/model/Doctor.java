@@ -2,6 +2,9 @@ package com.pack.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
+
 @Entity
 @Table(name="doctor")
 public class Doctor {
@@ -14,6 +17,17 @@ public class Doctor {
     private String loc;
     @Column
     private String spec;
+    @OneToMany(targetEntity = BookSlot.class,cascade = CascadeType.ALL)
+    @JoinColumn(name="do_fk",referencedColumnName = "id")
+    private List<BookSlot> bookSlots;
+
+    public List<BookSlot> getBookSlots() {
+        return bookSlots;
+    }
+
+    public void setBookSlots(List<BookSlot> bookSlots) {
+        this.bookSlots = bookSlots;
+    }
 
     public int getId() {
         return id;
@@ -46,4 +60,7 @@ public class Doctor {
     public void setSpec(String spec) {
         this.spec = spec;
     }
+
+
+
 }
