@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
 <body>
 <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,7 +26,7 @@
         <li class="nav-item active"><a class="nav-link"
                                        href="/">Home <span class="sr-only">(current)</span></a></li>
         <li class="nav-item active"><a class="nav-link"
-                                       href="list">Doctor List <span class="sr-only">(current)</span></a></li>
+                                       href="doclist">Doctor List <span class="sr-only">(current)</span></a></li>
         <li class="nav-item active"><a class="nav-link"
                                        href="sta">Book Appointment <span class="sr-only">(current)</span></a></li>
 
@@ -44,32 +47,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </head>
-
-<h1>Book Slot</h1>
-
-<form action="bookslot",method="post">
-
-
-
-
-
-    <label for="slot">Date:</label>
-    <input type="date" id="slot" name="date">
-    <label for="slottime">Time:</label>
-    <select name="time" id="slottime">
-        <option value="10:00AM">10:00AM</option>
-        <option value="11:00AM">11:00AM</option>
-        <option value="12:00AM">12:00PM</option>
-        <option value="2:00PM">2:00PM</option>
-        <option value="3:00PM">3:00PM</option>
-        <option value="4:00PM">4:00PM</option>
-        <option value="5:00PM">5:00PM</option>
-    </select>
-    <label for="docid">Doctor Id:</label>
-    <input type="number" id="docid" name="docid">
-    <input type="submit">
-</form>
-
-<h4> note:please  add doctor id in doctor text box</h4>
+mail sent successfully
 </body>
 </html>

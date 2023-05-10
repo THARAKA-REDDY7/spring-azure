@@ -17,14 +17,22 @@ public class BookSlot {
     private Date date;
     @Column
     private String time;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn( referencedColumnName = "id", nullable = true)
-    @Nullable
-    private Doctor doctor;
 
-    public int getDoctorId() {
-        return doctor != null ? doctor.getId() : null;
+    @Column
+    private int docid;
+
+    public int getDocid() {
+        return docid;
     }
+
+    public void setDocid(int docid) {
+        this.docid = docid;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "doctors_id")
+    private Doctor doctor;
+;
 
     public Doctor getDoctor() {
         return doctor;

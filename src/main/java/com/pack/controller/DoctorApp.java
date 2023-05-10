@@ -1,5 +1,7 @@
 package com.pack.controller;
 
+
+
 import com.pack.model.BookSlot;
 import com.pack.model.Cityandsy;
 import com.pack.model.Doctor;
@@ -20,19 +22,26 @@ public class DoctorApp {
 
     @Autowired
     private SaveSlotService saveSlotService;
+
+
     @RequestMapping("/")
+    public String Home()
+    {
+        return "home";
+    }
+    @RequestMapping("/sta")
     public String welcome(Model m)
     {
         System.out.println("inside welcome");
-        return "home";
+        return "first";
     }
 
-    /*@GetMapping("/a")
+    @GetMapping("/list")
     public String view(Model m)
     {
-        m.addAttribute("doc",doctorService.getAllDoctors());
-        return "index";
-    }*/
+        m.addAttribute("doc1",doctorService.getAllDoctors());
+        return "doclist";
+    }
 
     @PostMapping("/search")
     public String htmltoco(@ModelAttribute Cityandsy cs,Model m1)
@@ -43,9 +52,15 @@ public class DoctorApp {
         m1.addAttribute("doc",doctorService.findByLocAndSpec(c,s));
         return "index";
     }
+
+
     @GetMapping("/slot")
     public String slotpage()
+
     {
+
+       // String k=id;
+       // m.addAttribute("sol",k);
         return "slot";
     }
     @GetMapping("/bookslot")
@@ -54,8 +69,9 @@ public class DoctorApp {
         saveSlotService.saveSlot(bookSlot);
         System.out.println("save slot");
 
-        return "redirect:/";
+        return "mail";
     }
+
 
 
 }

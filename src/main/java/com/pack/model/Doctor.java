@@ -2,6 +2,7 @@ package com.pack.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,16 +18,17 @@ public class Doctor {
     private String loc;
     @Column
     private String spec;
-    @OneToMany(targetEntity = BookSlot.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="do_fk",referencedColumnName = "id")
-    private List<BookSlot> bookSlots;
+   // @OneToMany(targetEntity = BookSlot.class,cascade = CascadeType.ALL,)
+   // @JoinColumn(name="do_fk",referencedColumnName = "id")
+    @OneToMany(mappedBy ="doctor",cascade = CascadeType.ALL)
+    private List<BookSlot> bookslot=new ArrayList<>();
 
-    public List<BookSlot> getBookSlots() {
-        return bookSlots;
+    public List<BookSlot> getBookslot() {
+        return bookslot;
     }
 
-    public void setBookSlots(List<BookSlot> bookSlots) {
-        this.bookSlots = bookSlots;
+    public void setBookslot(List<BookSlot> bookslot) {
+        this.bookslot = bookslot;
     }
 
     public int getId() {
