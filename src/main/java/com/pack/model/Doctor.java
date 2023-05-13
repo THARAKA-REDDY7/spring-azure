@@ -20,16 +20,16 @@ public class Doctor {
     private String spec;
    // @OneToMany(targetEntity = BookSlot.class,cascade = CascadeType.ALL,)
    // @JoinColumn(name="do_fk",referencedColumnName = "id")
-    @OneToMany(mappedBy ="doctor",cascade = CascadeType.ALL)
-    private List<BookSlot> bookslot=new ArrayList<>();
+//    @OneToMany(mappedBy ="doctor",cascade = CascadeType.ALL)
+   // private List<BookSlot> bookslot=new ArrayList<>();
 
-    public List<BookSlot> getBookslot() {
+    /*public List<BookSlot> getBookslot() {
         return bookslot;
-    }
+    }*/
 
-    public void setBookslot(List<BookSlot> bookslot) {
+   /*public void setBookslot(List<BookSlot> bookslot) {
         this.bookslot = bookslot;
-    }
+    }*/
 
     public int getId() {
         return id;

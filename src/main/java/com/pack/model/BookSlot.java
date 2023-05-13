@@ -29,7 +29,7 @@ public class BookSlot {
         this.docid = docid;
     }
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "doctors_id")
     private Doctor doctor;
 ;
@@ -41,7 +41,7 @@ public class BookSlot {
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
-
+*/
     public int getSid() {
         return sid;
     }
@@ -73,7 +73,6 @@ public class BookSlot {
                 ", date=" + date +
                 ", time='" + time + '\'' +
                 ", docid=" + docid +
-                ", doctor=" + doctor +
                 '}';
     }
 }
