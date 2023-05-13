@@ -65,4 +65,15 @@ public class BookSlot {
     public void setTime(String time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "BookSlot{" +
+                "sid=" + sid +
+                ", date=" + date +
+                ", time='" + time + '\'' +
+                ", docid=" + docid +
+                ", doctor=" + doctor +
+                '}';
+    }
 }

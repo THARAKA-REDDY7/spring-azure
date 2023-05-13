@@ -13,6 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Iterator;
+import java.util.List;
+
 @Controller
 public class DoctorApp {
     @Autowired
@@ -66,6 +69,22 @@ public class DoctorApp {
     @GetMapping("/bookslot")
     public String slotBook(@ModelAttribute("bookSlot") BookSlot bookSlot)
     {
+        int p= bookSlot.getDocid();
+
+        List<BookSlot> li=saveSlotService.findByDocid(p);
+
+        System.out.println(li);
+
+        Iterator i=li.iterator();
+        while(i.hasNext())
+        {
+            BookSlot s1=(BookSlot) i.next();
+            System.out.println(s1.getSid()+"  " +s1.getDate()+" "+s1.getTime()+"\n");
+        }
+
+
+        System.out.println(li);
+
         saveSlotService.saveSlot(bookSlot);
         System.out.println("save slot");
 
