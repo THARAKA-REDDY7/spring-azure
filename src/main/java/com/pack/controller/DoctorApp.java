@@ -26,9 +26,6 @@ public class DoctorApp {
     @Autowired
     private SaveSlotService saveSlotService;
 
-
-
-
     @RequestMapping("/")
     public String Home()
     {
@@ -37,7 +34,7 @@ public class DoctorApp {
     @RequestMapping("/sta")
     public String welcome(Model m)
     {
-        System.out.println("inside welcome1");
+        System.out.println("inside welcome2");
 
         return "first";
     }
