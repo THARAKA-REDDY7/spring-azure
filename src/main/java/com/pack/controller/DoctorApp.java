@@ -35,6 +35,7 @@ public class DoctorApp {
     public String welcome(Model m)
     {
         System.out.println("inside welcome2");
+        System.out.println("inside welcome3");
 
         return "first";
     }
