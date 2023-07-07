@@ -27,6 +27,8 @@ public class DoctorApp {
     private SaveSlotService saveSlotService;
 
 
+
+
     @RequestMapping("/")
     public String Home()
     {
@@ -35,7 +37,8 @@ public class DoctorApp {
     @RequestMapping("/sta")
     public String welcome(Model m)
     {
-        System.out.println("inside welcome");
+        System.out.println("inside welcome1");
+
         return "first";
     }
 
