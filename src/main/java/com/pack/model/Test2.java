@@ -1,2 +1,4 @@
-package com.pack.model;public class Test2 {
+package com.pack.model;
+
+public class Test2 {
 }
